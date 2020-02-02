@@ -1,0 +1,54 @@
+{
+  "name": "hapi-etagger",
+  "version": "1.0.0-beta.1",
+  "description": "Hapi plug-in for etags and HTTP 304 support",
+  "main": "src/index.js",
+  "author": "Frank Thelen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/frankthelen/hapi-etagger"
+  },
+  "keywords": [
+    "hapi",
+    "plug-in",
+    "etag",
+    "etags",
+    "http 304",
+    "performance"
+  ],
+  "scripts": {
+    "lint": "eslint . --ignore-path ./.eslintignore",
+    "test": "NODE_ENV=test nyc --reporter=lcov --reporter=text-summary mocha --exit --recursive test",
+    "coveralls": "nyc report --reporter=lcovonly && cat ./coverage/lcov.info | coveralls",
+    "preversion": "npm run lint && npm test"
+  },
+  "engines": {
+    "node": ">=10.x.x"
+  },
+  "peerDependencies": {
+    "@hapi/hapi": ">=19.x.x"
+  },
+  "devDependencies": {
+    "@hapi/boom": "^9.0.0",
+    "@hapi/hapi": "^19.0.5",
+    "@hapi/joi": "^17.1.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.0.9",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-should-promised": "^2.0.0",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "semver": "^7.1.1",
+    "sinon": "^8.1.1",
+    "sinon-chai": "^3.4.0"
+  },
+  "dependencies": {
+    "etag": "^1.8.1",
+    "fast-safe-stringify": "^2.0.7"
+  }
+}
