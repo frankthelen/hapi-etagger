@@ -24,28 +24,28 @@
     "preversion": "npm run lint && npm test"
   },
   "engines": {
-    "node": ">=10.x.x"
+    "node": ">=12.x.x"
   },
   "peerDependencies": {
     "@hapi/hapi": ">=19.x.x"
   },
   "devDependencies": {
-    "@hapi/boom": "^9.0.0",
-    "@hapi/hapi": "^19.0.5",
-    "@hapi/joi": "^17.1.0",
+    "@hapi/boom": "^9.1.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "coveralls": "^3.0.9",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-should-promised": "^2.0.0",
-    "mocha": "^7.0.1",
-    "nyc": "^15.0.0",
-    "semver": "^7.1.1",
-    "sinon": "^8.1.1",
-    "sinon-chai": "^3.4.0"
+    "hapi19": "npm:@hapi/hapi@^19.2.0",
+    "hapi20": "npm:@hapi/hapi@^20.0.3",
+    "joi": "^17.1.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.2",
+    "sinon-chai": "^3.5.0"
   },
   "dependencies": {
     "etag": "^1.8.1",
