@@ -2,7 +2,7 @@ const stringify = require('fast-safe-stringify');
 const etag = require('etag');
 const { name } = require('../package.json');
 
-const register = (server) => {
+const register = (server, options) => {
   server.ext('onPreResponse', (request, h) => {
     const { route, method, response } = request;
     if (response instanceof Error) return h.continue;
@@ -28,7 +28,7 @@ const register = (server) => {
     }
 
     const responseHttp304 = h.entity({
-      etag: etag(data).slice(1, -1), // remove enclosing `"` because hapi adds them again
+      etag: etag(data, options).replace(/"/g, ''), // remove enclosing `"` because hapi adds them again
     });
     if (responseHttp304) return responseHttp304;
 
